@@ -43,6 +43,43 @@ class UserController{
             header("Location: ".base_url."user/register");
         }
     }
+
+
+    public function login(){
+        if(isset($_POST)){
+            // Consulta a la BD
+            $user = new User();
+            
+            $user->setEmail_user($_POST['email']);
+            $user->setPassword_user($_POST['password']);
+
+            $identity = $user->login();
+
+            if($identity && is_object($identity)){
+                $_SESSION['identity'] = $identity;
+
+                if($identity->role_user == 'admin'){
+                    $_SESSION['admin'] = true;
+                }
+            }else{
+                $_SESSION['error_login'] = "Identificación fallida";
+            }
+            header("Location: ".base_url);
+        }else{
+            header("Location: ".base_url);
+        }
+    }
+
+    public function logout(){
+        if(isset($_SESSION['identity'])){
+            unset($_SESSION['identity']);
+        }
+        if(isset($_SESSION['admin'])){
+            unset($_SESSION['admin']);
+        }
+
+        header("Location: ".base_url);
+    }
 }
 
 ?>
