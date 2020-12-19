@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
         <title>Tienda de playeras</title>
-        <link rel="stylesheet" type="text/css" href="./styles/css/styles.css?v=<?php echo(rand()); ?>"/>
+        <link rel="stylesheet" type="text/css" href="<?= base_url ?>./styles/css/styles.css?v=<?php echo(rand()); ?>"/>
     </head>
 
     <body>
@@ -11,7 +11,7 @@
             <!-- Cabecera -->
             <header id="header">
                 <div id="logo">
-                    <img src="./styles/img/camiseta.png" alt="Camiseta logo"/>
+                    <img src="<?= base_url ?>./styles/img/camiseta.png" alt="Camiseta logo"/>
                     <a href="./index.php">
                         Tienda de playeras
                     </a>

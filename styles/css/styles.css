@@ -269,3 +269,12 @@ button,
     clear: both;
     border-top: 4px solid #01B1EA;
 }
+
+
+.alert_green{
+    color: #33AE3D;
+}
+
+.alert_red{
+    color: tomato;
+}
