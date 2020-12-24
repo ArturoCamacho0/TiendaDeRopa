@@ -1,6 +1,7 @@
 <?php
 
 class Category{
+    private $id_category;
     private $name_category;
 
     private $db;
@@ -11,6 +12,18 @@ class Category{
     }
 
     // Getters y Setters
+    public function getId_category()
+    {
+        return $this->id_category;
+    }
+
+    public function setId_category($id_category)
+    {
+        $this->id_category = $this->db->real_escape_string($id_category);
+
+        return $this;
+    }
+
     public function getName_category()
     {
         return $this->name_category;
@@ -27,6 +40,12 @@ class Category{
         $categories = $this->db->query("SELECT * FROM category ORDER BY id_category DESC");
 
         return $categories;
+    }
+
+    public function getOne(){
+        $category = $this->db->query("SELECT * FROM category WHERE id_category = {$this->id_category}");
+
+        return $category->fetch_object();
     }
 
     public function save(){
@@ -47,6 +66,4 @@ class Category{
 
         return $result;
     }
-
-
 }

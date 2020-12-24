@@ -4,7 +4,22 @@ require_once 'models/Product.php';
 
 class ProductController{
     public function index(){
+        $product = new Product;
+        $products = $product->getRandom(6);
+
         require_once 'views/product/highlights.php';
+    }
+
+    public function see(){
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            $product = new Product;
+            $product->setId($id);
+
+            $pro = $product->getOne();
+        }
+
+        require_once 'views/product/see.php';
     }
 
     public function manage(){

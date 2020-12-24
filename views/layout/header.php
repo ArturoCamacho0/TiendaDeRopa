@@ -21,12 +21,12 @@
             <!-- Menu -->
             <nav id="menu">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
+                    <li><a href="<?=base_url?>">Inicio</a></li>
                     <?php
                         $categories = Utils::showCategories();
                         while($cat = $categories->fetch_object()):
                     ?>
-                        <li><a href="#"><?= $cat->name_category ?></a></li>
+                        <li><a href="<?=base_url?>category/see&id=<?=$cat->id_category?>"><?= $cat->name_category ?></a></li>
                     <?php endwhile; ?>
                 </ul>
             </nav>
