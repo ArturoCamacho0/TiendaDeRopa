@@ -156,7 +156,8 @@ label,
 input[type="text"],
 input[type="email"],
 input[type="password"],
-select{
+input[type="number"],
+select, textarea{
     display: block;
     width: 95%;
     margin-top: 2px;
@@ -174,7 +175,8 @@ button{
 input[type="text"],
 input[type="email"],
 input[type="password"],
-select{
+input[type="number"],
+select, textarea{
     border: 1px solid #C9C9C9;
     box-shadow: 0px 0px 2px #CCC inset;
     background-color: white;
@@ -186,6 +188,8 @@ select{
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus,
 select:focus{
     border: 1px solid #1579B5;
     color: black;
@@ -295,4 +299,23 @@ table{
 td{
     border-top: 1px solid #ccc;
     padding: 2px;
+}
+
+.gestion{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+}
+
+.red{
+    background-color: crimson;
+}
+
+.blue{
+    background-color: #1579B5;
+}
+
+.tumb{
+    width: 100px;
+    height: auto;
 }
