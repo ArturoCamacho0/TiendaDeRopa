@@ -259,6 +259,13 @@ button,
 .product  img{
     height: 120px;
     margin-bottom: 10px;
+    list-style: none;
+}
+
+.img_cart{
+    display: block;
+    margin: 10px auto;
+    height: 80px;
 }
 
 .product p{
@@ -329,7 +336,7 @@ button,
 
 table{
     text-align: center;
-    border: 1px solid #555;
+    border-bottom: 1px solid #ccc;
     width: 100%;
 }
 
@@ -355,4 +362,17 @@ td{
 .tumb{
     width: 100px;
     height: auto;
+}
+
+/* Carrito */
+.order{
+    display: block;
+    float: right;
+}
+
+._cart{
+    display: block;
+    float: right;
+    width: 100px;
+    margin-top: 10px;
 }

@@ -1,7 +1,6 @@
                 <!-- Barra lateral -->
                 <aside id="lateral">
                     <div id="login" class="block_aside">
-                        
                     <?php if(!isset($_SESSION['identity'])): ?>
                         <h3>Entrar a la web</h3>
                         <form action="<?=base_url?>user/login" method="POST">
@@ -32,6 +31,17 @@
                         <?php endif; ?>
                         </ul>
                     </div>
+
+                    <div id="cart" class="block_aside">
+                        <h3>Mi carrito</h3>
+                        <ul>
+                            <?php $stats = Utils::stats_cart();  ?>
+                            <li>Productos (<?= $stats['count'] ?>)</li>
+                            <li>Total de los productos $<?= $stats['total'] ?></li>
+                            <li><a href="<?=base_url?>cart/index">Ver el carrito</a></li>
+                        </ul>
+                    </div>
+
                 </aside>
 
                 <!-- Contenido central -->
