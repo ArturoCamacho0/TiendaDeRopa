@@ -1,5 +1,10 @@
 <h1>Carrito de la compra</h1>
 
+<?php if (isset($_SESSION['order']) && $_SESSION['order'] == "failed"): ?>
+    <strong class="alert_red">Ha ocurrido un error con el pedido</strong>
+    <?php unset($_SESSION['order']); ?>
+<?php endif; ?>
+
 <table>
     <tr>
         <th>Imágen</th>
@@ -39,6 +44,6 @@
 
 <div class="order">
     <h3>Precio total: $<?= $stats['total']; ?> </h3>
-
-    <a class="button _cart">Hacer pedido</a>
+    
+    <a href="<?=base_url?>order/index" class="button _cart">Hacer pedido</a>
 </div>

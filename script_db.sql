@@ -62,6 +62,7 @@ CREATE TABLE lines_orders(
 	id_lineorder INT AUTO_INCREMENT,
     order_id INT,
     product_id INT,
+    units INT,
     
     CONSTRAINT pk_lineorder PRIMARY KEY (id_lineorder),
     CONSTRAINT fk_order1 FOREIGN KEY (order_id) REFERENCES orders(id_order) ON DELETE CASCADE,
