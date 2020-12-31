@@ -33,7 +33,21 @@
 
             <td><?= $product->price_product ?></td>
             
-            <td><?= $element['units'] ?></td>
+            <td>
+                <div class="updown">
+                    <a href="<?=base_url?>cart/up&index=<?=$index?>" class="button">+</a>
+                    <?= $element['units'] ?>
+                    <a href="<?=base_url?>cart/down&index=<?=$index?>" class="button">-</a>
+                </div>
+            </td>
+
+            <td>
+                <a 
+                    href="<?=base_url?>cart/remove&index=<?= $index ?>"
+                    class="button red delete_only">
+                    Eliminar del carrito
+                </a>
+            </td>
         </tr>
     <?php endforeach; ?>
 </table>
@@ -42,8 +56,14 @@
 
 <?php $stats = Utils::stats_cart(); ?>
 
+<div class="delete_cart">
+    <a href="<?=base_url?>cart/delete_all" class="button red">Vaciar carrito</a>
+</div>
+
 <div class="order">
     <h3>Precio total: $<?= $stats['total']; ?> </h3>
     
-    <a href="<?=base_url?>order/index" class="button _cart">Hacer pedido</a>
+    <?php if($stats['total'] > 0): ?>
+        <a href="<?=base_url?>order/index" class="button _cart">Hacer pedido</a>
+    <?php endif; ?>
 </div>

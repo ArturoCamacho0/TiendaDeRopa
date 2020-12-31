@@ -376,3 +376,17 @@ td{
     width: 100px;
     margin-top: 10px;
 }
+
+.delete_cart{
+    width: 120px;
+}
+
+.delete_only{
+    width: 50%;
+    float: right;
+}
+
+.updown > .button{
+    margin: 0px auto;
+    width: 50%;
+}
